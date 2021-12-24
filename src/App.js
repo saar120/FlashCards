@@ -21,8 +21,12 @@ export default class App extends Component {
     this.setCards();
   };
 
-  onClick = () => {
-    // this.addCard(Math.random());
+  updateCard = (card) => {
+    const flashCards = [...this.state.flashCards];
+    const cardToUpdate = flashCards.find((oldCard) => oldCard.id === card.id);
+    flashCards.splice(flashCards.indexOf(cardToUpdate), 1, card);
+    localStorage.setItem("flashCards", JSON.stringify(flashCards));
+    this.setCards();
   };
 
   componentDidMount = () => {
@@ -36,10 +40,11 @@ export default class App extends Component {
           <Header />
           <Switch>
             <Route path="/" exact component={MainPage} />
-            <Route path="/edit" exact component={EditPage} />
+            <Route path="/edit" exact>
+              <EditPage addHandler={this.addCard} updateHandler={this.updateCard} flashCards={this.state.flashCards} />
+            </Route>
           </Switch>
         </Router>
-        <button onClick={this.onClick}>click</button>
       </div>
     );
   }
