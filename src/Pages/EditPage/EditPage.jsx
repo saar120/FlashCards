@@ -15,6 +15,11 @@ export default class EditPage extends Component {
     this.resetState();
   };
 
+  deleteHandler = () => {
+    this.props.deleteHandler(this.state.currentCard);
+    this.resetState();
+  };
+
   updateHandler = (card) => {
     this.props.updateHandler(card);
     this.resetState();
@@ -45,7 +50,14 @@ export default class EditPage extends Component {
       return <Form submitHandler={this.addHandler} cancelHandler={this.resetState} />;
     }
     if (this.state.currentCard.id) {
-      return <Form card={this.state.currentCard} submitHandler={this.updateHandler} cancelHandler={this.resetState} />;
+      return (
+        <Form
+          card={this.state.currentCard}
+          deleteHandler={this.deleteHandler}
+          submitHandler={this.updateHandler}
+          cancelHandler={this.resetState}
+        />
+      );
     }
   };
 

@@ -52,7 +52,7 @@ export default class Form extends Component {
           </div>
           <div className="bottom-button-holder">
             {this.props.card && (
-              <button>
+              <button onClick={this.props.deleteHandler}>
                 <i className="fas fa-trash"></i>
               </button>
             )}

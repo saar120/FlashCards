@@ -29,6 +29,14 @@ export default class App extends Component {
     this.setCards();
   };
 
+  deleteItem = (card) => {
+    const flashCards = [...this.state.flashCards];
+    const cardToDelete = flashCards.find((deleteCard) => deleteCard.id === card.id);
+    flashCards.splice(flashCards.indexOf(cardToDelete), 1);
+    localStorage.setItem("flashCards", JSON.stringify(flashCards));
+    this.setCards();
+  };
+
   componentDidMount = () => {
     this.setCards();
   };
@@ -41,7 +49,12 @@ export default class App extends Component {
           <Switch>
             <Route path="/" exact component={MainPage} />
             <Route path="/edit" exact>
-              <EditPage addHandler={this.addCard} updateHandler={this.updateCard} flashCards={this.state.flashCards} />
+              <EditPage
+                deleteHandler={this.deleteItem}
+                addHandler={this.addCard}
+                updateHandler={this.updateCard}
+                flashCards={this.state.flashCards}
+              />
             </Route>
           </Switch>
         </Router>
