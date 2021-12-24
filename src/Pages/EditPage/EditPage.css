@@ -1,0 +1,22 @@
+.SmallCardsHolder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1.5rem;
+  gap: 1rem;
+}
+
+.add-button-holder {
+  margin: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-button-holder > button {
+  width: 3.2rem;
+  border-radius: 50%;
+}
+
+i {
+  pointer-events: none;
+}

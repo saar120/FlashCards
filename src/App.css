@@ -2,10 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #bbe1fa;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-  background-color: #2f86a6;
+  background-color: #3282b8;
 }
 
 .App {

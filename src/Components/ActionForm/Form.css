@@ -1,0 +1,73 @@
+.Form {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #0f4c75;
+  width: clamp(20rem, 70%, 40rem);
+  border-radius: 1rem;
+  box-shadow: 0px 1px 10px 1px #2e2d2d;
+}
+
+.wrapper > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+textarea {
+  box-shadow: 0px 1px 10px 1px #2e2d2d;
+  background-color: #1b262c;
+  border-radius: 10px;
+  outline: none;
+  border-style: none;
+  border-color: Transparent;
+  overflow: auto;
+  resize: none;
+  padding: 1rem;
+  width: 70%;
+}
+
+button {
+  background-color: #1c2e38;
+  box-shadow: 0px 1px 10px 1px #2e2d2d;
+  width: 50%;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  border: 2px solid #3282b8;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3282b8;
+  color: #1c2e38;
+}
+
+div.button-holder {
+  align-items: flex-end;
+}
+
+button.exit {
+  font-size: 1rem;
+  width: 2.6rem;
+  height: 2.7rem;
+  border-radius: 50%;
+}
+
+.text {
+  font-size: 1.6rem;
+}
