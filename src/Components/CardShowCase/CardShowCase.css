@@ -3,7 +3,7 @@
 }
 
 .card {
-  height: clamp(400px, 37vh, 700px);
+  height: clamp(300px, 50vh, 500px);
   width: clamp(300px, 30vw, 600px);
   transition: all ease-in 0.3s;
   background-color: #1b262c;

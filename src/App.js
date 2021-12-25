@@ -50,8 +50,8 @@ export default class App extends Component {
               />
             </Route>
           </Switch>
-          <div className="footer">&#9400; Created by Saar Amrani </div>
         </Router>
+        <div className="footer">&#9400; Created by Saar Amrani </div>
       </div>
     );
   }

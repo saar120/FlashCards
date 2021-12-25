@@ -50,14 +50,10 @@ body {
 }
 
 .footer {
-  position: absolute;
-  padding: 1rem;
   font-size: 0.8rem;
   text-align: right;
+  position: absolute;
+  left: 0;
   bottom: 0;
   right: 0;
-}
-
-button:hover {
-  scale: 1.1;
 }
