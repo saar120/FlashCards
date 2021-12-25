@@ -6,7 +6,7 @@ import EditPage from "./Pages/EditPage/EditPage";
 import Header from "./Components/Header/Header";
 
 export default class App extends Component {
-  state = { flashCards: [], currentFlashCards: {} };
+  state = { flashCards: JSON.parse(localStorage.getItem("flashCards")) || [], currentFlashCards: {} };
 
   setCards = () => {
     localStorage.getItem("flashCards") && this.setState({ flashCards: JSON.parse(localStorage.getItem("flashCards")) });
@@ -34,19 +34,13 @@ export default class App extends Component {
     this.setCards();
   };
 
-  componentDidMount = () => {
-    this.setCards();
-  };
-
   render() {
     return (
       <div className="App">
         <Router>
           <Header />
           <Switch>
-            <Route path="/" exact>
-              <MainPage cards={this.state.flashCards} />
-            </Route>
+            <Route path="/" exact render={(props) => <MainPage {...props} cards={this.state.flashCards} />} />
             <Route path="/edit" exact>
               <EditPage
                 deleteHandler={this.deleteItem}
@@ -56,6 +50,7 @@ export default class App extends Component {
               />
             </Route>
           </Switch>
+          <div className="footer">&#9400; Created by Saar Amrani </div>
         </Router>
       </div>
     );

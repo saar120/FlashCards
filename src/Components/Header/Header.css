@@ -1,6 +1,31 @@
 .Header {
   display: flex;
   justify-content: space-between;
-  padding: 0.8rem;
+  height: 3rem;
   background-color: #1b262c;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-btn::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #61dafb;
+  transition: width 0.3s;
+  bottom: 0;
+}
+
+.nav-btn:hover::after {
+  width: 100%;
 }
