@@ -1,0 +1,13 @@
+.MainPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  gap: 2rem;
+}
+
+.bottom-btn-holder {
+  display: flex;
+  gap: 0.3rem;
+}

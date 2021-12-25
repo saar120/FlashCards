@@ -9,10 +9,7 @@ export default class App extends Component {
   state = { flashCards: [], currentFlashCards: {} };
 
   setCards = () => {
-    localStorage.getItem("flashCards") &&
-      this.setState({ flashCards: JSON.parse(localStorage.getItem("flashCards")) }, () => {
-        console.log(this.state.flashCards);
-      });
+    localStorage.getItem("flashCards") && this.setState({ flashCards: JSON.parse(localStorage.getItem("flashCards")) });
   };
 
   addCard = (card) => {
@@ -47,7 +44,9 @@ export default class App extends Component {
         <Router>
           <Header />
           <Switch>
-            <Route path="/" exact component={MainPage} />
+            <Route path="/" exact>
+              <MainPage cards={this.state.flashCards} />
+            </Route>
             <Route path="/edit" exact>
               <EditPage
                 deleteHandler={this.deleteItem}

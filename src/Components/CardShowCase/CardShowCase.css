@@ -1,0 +1,37 @@
+.CardShow {
+  position: relative;
+}
+
+.card {
+  height: clamp(400px, 37vh, 700px);
+  width: clamp(300px, 30vw, 600px);
+  transition: all ease-in 0.3s;
+  background-color: #1b262c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  box-shadow: 0px 1px 10px 1px #2e2d2d;
+}
+
+.card-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(90deg);
+}
+
+.flipped .card-front {
+  transform: rotateY(0deg);
+  transition-delay: 0.3s;
+}
+
+.card-back {
+  transition-delay: 0.3s;
+}
+
+.flipped .card-back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
