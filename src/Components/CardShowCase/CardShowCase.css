@@ -5,7 +5,7 @@
 .card {
   height: clamp(300px, 50vh, 500px);
   width: clamp(300px, 30vw, 600px);
-  transition: all ease-in 0.3s;
+  transition: all ease-in 0.2s;
   background-color: #1b262c;
   display: flex;
   flex-direction: column;
@@ -25,11 +25,11 @@
 
 .flipped .card-front {
   transform: rotateY(0deg);
-  transition-delay: 0.3s;
+  transition-delay: 0.2s;
 }
 
 .card-back {
-  transition-delay: 0.3s;
+  transition-delay: 0.2s;
 }
 
 .flipped .card-back {

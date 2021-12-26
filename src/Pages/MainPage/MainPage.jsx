@@ -28,6 +28,10 @@ export default class MainPage extends Component {
     this.setState({ cards: newCards });
   };
 
+  flipCard = () => {
+    this.setState({ flipped: !this.state.flipped });
+  };
+
   componentDidMount = () => {
     this.setState({ cards: this.props.cards });
   };
@@ -47,7 +51,7 @@ export default class MainPage extends Component {
             <button className="shuffle" onClick={this.shuffleCards}>
               <i className="fas fa-random"></i>
             </button>
-            <CardShowCase card={cards[currentIndex]} />
+            <CardShowCase key={cards[currentIndex].id} card={cards[currentIndex]} />
             <div className="bottom-btn-holder">
               <button onClick={this.moveCards} data-action="back" className="back">
                 back
